@@ -1,0 +1,23 @@
+[package]
+name = "credit_vault"
+version = "0.1.0"
+description = "GTA 6 credit vault: backed USD credit from a Token-2022 transfer fee"
+edition = "2021"
+# The Solana 2.1 SBF toolchain ships Cargo/rustc 1.79; dependencies resolve to versions it can build.
+rust-version = "1.79"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "credit_vault"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = { version = "0.31.1", features = ["token", "token_2022", "associated_token"] }

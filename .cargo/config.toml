@@ -1,0 +1,4 @@
+# Resolve dependencies to versions compatible with the package's rust-version (1.79),
+# which is what the Solana 2.1 SBF toolchain can compile.
+[resolver]
+incompatible-rust-versions = "fallback"
